@@ -30,3 +30,39 @@ a {
 a:hover {
   cursor: pointer;
 }
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  /* background-color: red; */
+}
+
+/****** Navbar *********/
+
+div.container * {
+  color: var(--light-accent-color);
+}
+
+#nav {
+  height: 60px;
+  background-color: var(--dark-accent-color);
+  margin-bottom: 25px;
+}
+
+#navContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-header {
+  color: var(--light-accent-color);
+  font-size: 28px;
+}
+
+#addBtn {
+  font-size: 24px;
+  color: var(--light-accent-color);
+}

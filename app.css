@@ -62,8 +62,8 @@ a:hover {
 }
 
 #addBtn {
-  font-size: 24px;
   color: var(--light-accent-color);
+  font-size: 24px;
 }
 
 /****** Panel Styles *********/
@@ -89,6 +89,24 @@ a:hover {
   height: 34px;
   border-radius: 5px;
   border: 1px solid var(--main-gray);
+  padding: 5px 15px;
   font-size: 14px;
   color: var(--main-gray);
+}
+
+/****** Button Styles *********/
+
+input[type="submit"], button {
+  padding: 8px 22px;
+  border-radius: 5px;
+  border: 1px solid var(--main-accent);
+  background-color: var(--main-accent);
+  color: var(--light-accent-color);
+  font-size: 16px;
+}
+
+input[type="submit"]:hover, button:hover {
+  cursor: pointer;
+  color: var(--main-accent);
+  background-color: white;
 }

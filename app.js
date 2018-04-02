@@ -1,10 +1,17 @@
-var linkCategory = document.querySelector("#linkCategory");
+const linkCategory = document.querySelector("#linkCategory"); 
+
+let linkCategories = [];
 
 console.log(linkCategory);
 
 linkCategory.addEventListener("keydown", function(event) {
   if(event.keyCode === 188) {
-    console.log("Comma Was Pressed");
-    console.log(linkCategory.value);
+    event.preventDefault(); // prevents the comma from appearing
+    linkCategories.push(linkCategory.value); // push value to array 
+    linkCategory.value = ""; // Clears the form
+
+    // Display the updated categories
+    displayLinkCategories();
   }
 });
+

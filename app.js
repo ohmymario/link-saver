@@ -2,26 +2,30 @@ const linkCategory = document.querySelector("#linkCategory");
 const submitButton = document.querySelector("#submitButton");
 const addBtn       = document.querySelector("#addBtn");
 const cancelButton = document.querySelector("#cancelButton");
+const addLinkPanel = document.querySelector("#addLinkPanel");
 
 let linkCategories = [];
-let links = [];
+let links          = [];
 
 addBtn.addEventListener("click", (event) => {
-  event.preventDefault(); 
-  console.log("addBtn")
+  // event.preventDefault(); 
+  console.log("addBtn");
+  showFormPanel();
 });
 
 cancelButton.addEventListener("click", (event) => {
   event.preventDefault(); 
   console.log("cancelButton")
+  hideFormPanel();
 });
 
+// Hide / Show Form Function - Reusable
 function showFormPanel() {
-
+  addLinkPanel.classList.remove('hidden');
 }
 
 function hideFormPanel() {
-
+  addLinkPanel.classList.add('hidden');
 }
 
 linkCategory.addEventListener("keydown", function(event) {
@@ -66,5 +70,8 @@ submitButton.addEventListener("click", function(event) {
   linkCategories = [];
 
   displayLinkCategories();
+
+  //Hide Form Panel
+  hideFormPanel();
   
 });

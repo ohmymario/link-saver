@@ -1,8 +1,28 @@
 const linkCategory = document.querySelector("#linkCategory"); 
 const submitButton = document.querySelector("#submitButton");
+const addBtn       = document.querySelector("#addBtn");
+const cancelButton = document.querySelector("#cancelButton");
 
 let linkCategories = [];
 let links = [];
+
+addBtn.addEventListener("click", (event) => {
+  event.preventDefault(); 
+  console.log("addBtn")
+});
+
+cancelButton.addEventListener("click", (event) => {
+  event.preventDefault(); 
+  console.log("cancelButton")
+});
+
+function showFormPanel() {
+
+}
+
+function hideFormPanel() {
+
+}
 
 linkCategory.addEventListener("keydown", function(event) {
   if(event.keyCode === 188) {

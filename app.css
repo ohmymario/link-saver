@@ -36,6 +36,10 @@ a:hover {
   /* background-color: red; */
 }
 
+.hidden {
+  display: none;
+}
+
 /****** Navbar Styles *********/
 
 /* div.container * {
@@ -61,7 +65,7 @@ a:hover {
   font-size: 28px;
 }
 
-.addBtn {
+#addBtn {
   color: var(--light-accent-color);
   font-size: 24px;
 }

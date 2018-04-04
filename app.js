@@ -5,7 +5,27 @@ const cancelButton = document.querySelector("#cancelButton");
 const addLinkPanel = document.querySelector("#addLinkPanel");
 
 let linkCategories = [];
-let links          = [];
+
+// Test Content
+let links          = [
+  {
+    title: 'New Link 1',
+    url: 'url.com1',
+    categories: ['node', 'bulma']      
+  },
+  {
+    title: 'New Link 2',
+    url: 'url.com2',
+    categories: ['node', 'angular']    
+  },
+  {
+    title: 'New Link 3',
+    url: 'url.com3',
+    categories: ['node', 'bootstrap']    
+  }
+];
+
+displayLinks();
 
 addBtn.addEventListener("click", (event) => {
   // event.preventDefault(); 
@@ -75,3 +95,7 @@ submitButton.addEventListener("click", function(event) {
   hideFormPanel();
   
 });
+
+function displayLinks() {
+
+}

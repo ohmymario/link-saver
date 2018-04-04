@@ -40,6 +40,12 @@ a:hover {
   display: none;
 }
 
+.header {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--main-gray);
+}
+
 /****** Navbar Styles *********/
 
 /* div.container * {
@@ -77,12 +83,7 @@ a:hover {
   border-radius: 5px;
   box-shadow: 0 0 3px var(--main-gray);
   padding: 40px 20px 20px 20px;
-}
-
-.panel-heading {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: var(--main-gray);
+  margin: 10px;
 }
 
 /****** Form Styles *********/
@@ -113,4 +114,37 @@ input[type="submit"]:hover, button:hover {
   cursor: pointer;
   color: var(--main-accent);
   background-color: white;
+}
+
+.btn-sm {
+  font-size: 10px;
+  padding: 5px 10px;
+}
+
+/****** Link Styles *********/
+
+.link {
+  position: relative;
+}
+
+.link-options {
+  /* going to postion relative to parent container [.link] */
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.link-date {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.category {
+  font-weight: bold;
+  padding: 5px;
+  border: 1px solid var(--main-accent);
+  border-radius: 5px;
+  font-size: 10px;
+  background-color: var(--main-accent);
+  color: var(--light-accent-color);
 }

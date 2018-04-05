@@ -71,10 +71,6 @@ a:hover {
   font-size: 28px;
 }
 
-#addBtn {
-  color: var(--light-accent-color);
-  font-size: 24px;
-}
 
 @media only screen and (max-width: 786px) {
   #nav {
@@ -130,6 +126,11 @@ input[type="submit"]:hover, button:hover {
 .btn-sm {
   font-size: 10px;
   padding: 5px 10px;
+}
+
+#addBtn {
+  color: var(--light-accent-color);
+  font-size: 24px;
 }
 
 /****** Link Styles *********/

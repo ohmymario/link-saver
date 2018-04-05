@@ -8,6 +8,8 @@ const addedCategories = document.querySelector("#addedCategories");
 
 let linkCategories = [];
 
+let editIndex = -1;
+
 // Test Content
 let links          = [
   {
@@ -44,6 +46,7 @@ cancelButton.addEventListener("click", (event) => {
 // Hide / Show Form Function - Reusable
 function showFormPanel() {
   addLinkPanel.classList.remove('hidden');
+  displayLinkCategories();
 }
 
 function hideFormPanel() {
@@ -97,8 +100,13 @@ submitButton.addEventListener("click", function(event) {
 
   console.log(newLink);
 
-  // Push all information into front of array
-  links.unshift(newLink);
+  if(editIndex === -1) {
+    // Push all information into front of array
+    links.unshift(newLink);
+  } else {
+    links[editIndex] = newLink;
+    editIndex = -1;
+  }
 
   clearLinkForm();
   
@@ -157,4 +165,12 @@ function deleteLink(index) {
 
 function editLink(index) {
   console.log(`Editing link at index ${index}`);
+
+  editIndex = index;
+  linkTitle.value = links[index].title;
+  linkUrl.value = links[index].url;
+  linkCategories = links[index].categories;
+
+  showFormPanel();
+
 }

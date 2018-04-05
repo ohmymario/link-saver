@@ -76,6 +76,17 @@ a:hover {
   font-size: 24px;
 }
 
+@media only screen and (max-width: 786px) {
+  #nav {
+    height: 100px;
+  }
+
+  #navContainer {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 /****** Panel Styles *********/
 
 .panel {
@@ -127,6 +138,15 @@ input[type="submit"]:hover, button:hover {
   position: relative;
 }
 
+.flex-item  {
+  flex-basis: 100%;
+}
+
+#linksList {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .link-options {
   /* going to postion relative to parent container [.link] */
   position: absolute;
@@ -150,4 +170,18 @@ input[type="submit"]:hover, button:hover {
   font-size: 10px;
   background-color: var(--main-accent);
   color: var(--light-accent-color);
+}
+
+/* Once screen is 1279px - 786px width set to 2 Links Per Row */
+@media only screen and (min-width: 786px) {
+  .flex-item {
+    flex-basis: 50%;
+  }
+}
+
+/* Once screen is larger than 1280px width set to 3 Links Per Row */
+@media only screen and (min-width: 1280px) {
+  .flex-item {
+    flex-basis: 33%;
+  }
 }

@@ -1,8 +1,10 @@
-const linkCategory = document.querySelector("#linkCategory"); 
-const submitButton = document.querySelector("#submitButton");
-const addBtn       = document.querySelector("#addBtn");
-const cancelButton = document.querySelector("#cancelButton");
-const addLinkPanel = document.querySelector("#addLinkPanel");
+const linkCategory    = document.querySelector("#linkCategory"); 
+const submitButton    = document.querySelector("#submitButton");
+const addBtn          = document.querySelector("#addBtn");
+const cancelButton    = document.querySelector("#cancelButton");
+const addLinkPanel    = document.querySelector("#addLinkPanel");
+const linksList       = document.querySelector("#linksList");
+const addedCategories = document.querySelector("#addedCategories");
 
 let linkCategories = [];
 
@@ -46,6 +48,7 @@ function showFormPanel() {
 
 function hideFormPanel() {
   addLinkPanel.classList.add('hidden');
+  clearLinkForm()
 }
 
 linkCategory.addEventListener("keydown", function(event) {
@@ -61,6 +64,20 @@ linkCategory.addEventListener("keydown", function(event) {
 
 function displayLinkCategories() {
   console.log("Displaying Link Categories");
+  addedCategories.innerHTML = '';
+  for(let category of linkCategories) {
+    var categoryHTMLString = `<span class="category">${category}</span> \n`
+    addedCategories.innerHTML += categoryHTMLString;
+  }
+}
+
+// Clear Form and Reset Categories
+function clearLinkForm() {
+  linkTitle.value = '';
+  linkUrl.value = '';
+  linkCategory.value = '';
+  linkCategories = [];
+  addedCategories.innerHTML = '';
 }
 
 submitButton.addEventListener("click", function(event) {
@@ -80,22 +97,51 @@ submitButton.addEventListener("click", function(event) {
 
   console.log(newLink);
 
-  // Push all information into array
-  links.push(newLink);
+  // Push all information into front of array
+  links.unshift(newLink);
 
-  // Clear Form and Reset Categories
-  linkTitle.value = '';
-  linkUrl.value = '';
-  linkCategory.value = '';
-  linkCategories = [];
-
+  clearLinkForm();
+  
   displayLinkCategories();
 
   //Hide Form Panel
   hideFormPanel();
+
+  // Generate HTML with new user input
+  displayLinks();
   
 });
 
 function displayLinks() {
+  linksList.innerHTML = '';
 
+  for(let link of links) {
+   
+    let linkHTMLString = 
+    `<div class="link panel">
+
+      <div class="link-options">
+          <button class="btn-sm">Delete</button>
+          <button class="btn-sm">Edit</button>
+      </div>
+
+      <a href="${link.url}">
+        <h1 class="header">${link.title}</h1>
+      </a>
+
+      <p class="link-date">${Date.now()}</p>
+
+      <div class="categories">
+        Categories:`
+        for(let category of link.categories) {
+          linkHTMLString += `<span class="category">${category}</span> \n`
+        }
+
+        linkHTMLString +=
+      `</div>
+
+    </div>`;
+
+    linksList.innerHTML += linkHTMLString;
+  }
 }

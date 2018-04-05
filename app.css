@@ -46,6 +46,17 @@ a:hover {
   color: var(--main-gray);
 }
 
+/* grey-ish overlay enabled when editing or creating link */
+.full-screen-opaque {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.863);
+  z-index: 1;
+}
+
 /****** Navbar Styles *********/
 
 /* div.container * {
@@ -108,6 +119,12 @@ a:hover {
   padding: 5px 15px;
   font-size: 14px;
   color: var(--main-gray);
+}
+
+#addLinkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /****** Button Styles *********/

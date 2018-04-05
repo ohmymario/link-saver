@@ -69,8 +69,12 @@ a:hover {
 .nav-header {
   color: var(--light-accent-color);
   font-size: 28px;
+  transition: color 0.25s 0.35ms ease-in;
 }
 
+.nav-header:hover {
+  color: var(--main-accent);
+}
 
 @media only screen and (max-width: 786px) {
   #nav {
@@ -108,16 +112,17 @@ a:hover {
 
 /****** Button Styles *********/
 
-input[type="submit"], button {
+input[type='submit'], button {
   padding: 8px 22px;
   border-radius: 5px;
   border: 1px solid var(--main-accent);
   background-color: var(--main-accent);
   color: var(--light-accent-color);
   font-size: 16px;
+  transition: all 0.2s 0.35ms linear;
 }
 
-input[type="submit"]:hover, button:hover {
+input[type='submit']:hover, button:hover {
   cursor: pointer;
   color: var(--main-accent);
   background-color: white;
@@ -131,6 +136,11 @@ input[type="submit"]:hover, button:hover {
 #addBtn {
   color: var(--light-accent-color);
   font-size: 24px;
+  transition: all .05s .35ms linear;
+}
+
+#addBtn:hover {
+  transform: scale(1.5);
 }
 
 /****** Link Styles *********/
@@ -139,7 +149,7 @@ input[type="submit"]:hover, button:hover {
   position: relative;
 }
 
-.flex-item  {
+.flex-item {
   flex-basis: 100%;
 }
 

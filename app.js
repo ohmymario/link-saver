@@ -115,14 +115,15 @@ submitButton.addEventListener("click", function(event) {
 function displayLinks() {
   linksList.innerHTML = '';
 
+  let index = 0;
   for(let link of links) {
    
     let linkHTMLString = 
     `<div class="link panel">
 
       <div class="link-options">
-          <button class="btn-sm">Delete</button>
-          <button class="btn-sm">Edit</button>
+          <button class="btn-sm" onclick="deleteLink(${index})">Delete</button>
+          <button class="btn-sm" onclick="editLink(${index})">Edit</button>
       </div>
 
       <a href="${link.url}">
@@ -143,5 +144,17 @@ function displayLinks() {
     </div>`;
 
     linksList.innerHTML += linkHTMLString;
+    index++;
   }
+}
+
+function deleteLink(index) {
+  console.log(`Deleting link at index ${index}`);
+  links.splice(index, 1); // (Where on the array to remove, How many items)
+  console.log(links);
+  displayLinks(); // Recreate Links HTML
+}
+
+function editLink(index) {
+  console.log(`Editing link at index ${index}`);
 }

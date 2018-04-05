@@ -138,6 +138,9 @@ input[type="submit"]:hover, button:hover {
   font-size: 14px;
   font-style: italic;
 }
+#addedCategories {
+  margin-bottom: 15px;
+}
 
 .category {
   font-weight: bold;

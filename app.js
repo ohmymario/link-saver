@@ -1,10 +1,11 @@
-const linkCategory    = document.querySelector("#linkCategory"); 
-const submitButton    = document.querySelector("#submitButton");
-const addBtn          = document.querySelector("#addBtn");
-const cancelButton    = document.querySelector("#cancelButton");
-const addLinkPanel    = document.querySelector("#addLinkPanel");
-const linksList       = document.querySelector("#linksList");
-const addedCategories = document.querySelector("#addedCategories");
+const linkCategory     = document.querySelector("#linkCategory"); 
+const submitButton     = document.querySelector("#submitButton");
+const addBtn           = document.querySelector("#addBtn");
+const cancelButton     = document.querySelector("#cancelButton");
+const addLinkPanel     = document.querySelector("#addLinkPanel");
+const linksList        = document.querySelector("#linksList");
+const addedCategories  = document.querySelector("#addedCategories");
+const addLinkContainer = document.querySelector("#addLinkContainer");
 
 let linkCategories = [];
 
@@ -45,12 +46,12 @@ cancelButton.addEventListener("click", (event) => {
 
 // Hide / Show Form Function - Reusable
 function showFormPanel() {
-  addLinkPanel.classList.remove('hidden');
+  addLinkContainer.classList.remove('hidden');
   displayLinkCategories();
 }
 
 function hideFormPanel() {
-  addLinkPanel.classList.add('hidden');
+  addLinkContainer.classList.add('hidden');
   clearLinkForm()
 }
 

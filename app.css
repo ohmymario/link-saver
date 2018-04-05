@@ -127,6 +127,10 @@ a:hover {
   align-items: center;
 }
 
+#addLinkContainer.hidden {
+  display: none;
+}
+
 /****** Button Styles *********/
 
 input[type='submit'], button {

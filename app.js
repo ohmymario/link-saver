@@ -140,7 +140,7 @@ function displayLinks() {
           <h1 class="header">${link.title}</h1>
         </a>
 
-        <p class="link-date">${Date.now()}</p>
+        <p class="link-date">${formattedDate()}</p>
 
         <div class="categories">
           Categories:`
@@ -175,4 +175,15 @@ function editLink(index) {
 
   showFormPanel();
 
+}
+
+function formattedDate(d = new Date) {
+  let month = String(d.getMonth() + 1);
+  let day = String(d.getDate());
+  const year = String(d.getFullYear());
+
+  if (month.length < 2) month = '0' + month;
+  if (day.length < 2) day = '0' + day;
+
+  return `${month}/${day}/${year}`;
 }

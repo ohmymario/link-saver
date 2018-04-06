@@ -125,6 +125,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fade-in 0.5s 0.35ms linear;
 }
 
 #addLinkContainer.hidden {
@@ -190,6 +191,7 @@ input[type='submit']:hover, button:hover {
   font-size: 14px;
   font-style: italic;
 }
+
 #addedCategories {
   margin-bottom: 15px;
 }
@@ -216,4 +218,18 @@ input[type='submit']:hover, button:hover {
   .flex-item {
     flex-basis: 33%;
   }
+}
+
+/****** Animations *********/
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+	100% {
+		opacity: 1.0;
+	}		
 }
